@@ -8,6 +8,7 @@ const {
 
   //this route fetches upcoming hunts from the database for the logged in user
 router.get('/upcoming' , rejectUnauthenticated, ( req , res ) => {
+    
     let userId = req.user.id
     let sqlValues = [userId]
   
@@ -17,6 +18,7 @@ router.get('/upcoming' , rejectUnauthenticated, ( req , res ) => {
     pool.query(sqlQuery, sqlValues)
     .then ((dbRes)=>{
         res.send(dbRes.rows)
+        console.log(dbRes.rows);
     })
     .catch((dbErr)=>{
         console.log('GET upcoming hunt server side route error', dbErr);
