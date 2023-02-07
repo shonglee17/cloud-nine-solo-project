@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import React from 'react';
 import UpcomingHuntItem from './UpcomingHuntItem';
+import {useHistory} from 'react-router-dom'
 
 function UpcomingHunt() {
   const upcomingHunt = useSelector((store) => store.upcomingHuntReducer);
@@ -12,6 +13,11 @@ function UpcomingHunt() {
     });
   }, []);
   const dispatch = useDispatch();
+  const history = useHistory()
+  
+  const upcomingHuntDetails = () =>{
+    history.push('/upcominghuntdetails')
+  }
 
   return (
     <table
@@ -20,10 +26,11 @@ function UpcomingHunt() {
       }}
     >
       <thead>
-        <tr>
+        <tr onClick={upcomingHuntDetails}>
           <th>DATE</th>
           <th>SPECIES</th>
           <th>MODIFY</th>
+          <th>Upcoming Hunt</th>
         </tr>
       </thead>
 

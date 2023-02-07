@@ -1,4 +1,4 @@
-
+import {useHistory} from 'react-router-dom'
 
 function PreviousHuntItem({data}){
     let huntDate = data.date;
@@ -8,9 +8,16 @@ function PreviousHuntItem({data}){
     let year = dateObj.getUTCFullYear();
     let newDate = year + '/' + month + '/' + day;
     console.log(data.species);
+
+    const history = useHistory()
+
+    const previousHuntDetails = () =>{
+      history.push('/previoushuntdetails')
+    }
+
     return(
         <tbody key={data.id}>
-        <tr>
+        <tr onClick={previousHuntDetails}>
           <td>{newDate}</td>
           <td>{data.species}</td>
           <td>icons go here</td>
