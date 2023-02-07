@@ -44,4 +44,35 @@ router.get('/previous' , rejectUnauthenticated, ( req , res ) => {
     })
 })
 
+router.post('/' , rejectUnauthenticated , ( req , res)=>{
+    let dataToSend = req.body
+    let userId = req.user.id
+
+    const sqlQuery = `INSERT INTO "hunt"("date","location", "species","equipment","bagged","notes","image","restrictions", "user_id")
+	                    VALUES 
+	                        ( $1 , $2 , $3 , $4 , $5 , $6 , $7 , $8 , $9);`
+
+    const sqlValues = [
+                    dataToSend.date, 
+                    dataToSend.location, 
+                    dataToSend.species, 
+                    dataToSend.equipment, 
+                    dataToSend.bagged, 
+                    dataToSend.notes,
+                    dataToSend.image,
+                    dataToSend.restrictions,
+                    userId
+                ]
+    pool.query(sqlQuery, sqlValues)
+        .then((dbRes)=>{
+            res.sendStatus(201)
+        })
+        .catch((dbErr)=>{
+            console.log('error in POST serverside:', dbErr)
+            res.sendStatus(500)
+        })
+
+})
+
+
 module.exports = router
