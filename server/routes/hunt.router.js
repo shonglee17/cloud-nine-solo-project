@@ -46,10 +46,12 @@ router.get('/previous' , rejectUnauthenticated, ( req , res ) => {
 
 //this route stores data from the front end user and sends it to the database
 router.post('/' , rejectUnauthenticated , ( req , res)=>{
+    
     let dataToSend = req.body
     let userId = req.user.id
-
-    const sqlQuery = `INSERT INTO "hunt"("date","location", "species","equipment","bagged","notes","image","restrictions", "user_id")
+    console.log(dataToSend);
+    console.log(userId);
+    const sqlQuery = `INSERT INTO "hunt"("date","location", "species", "equipment","restrictions","bagged","notes","image", "user_id")
 	                    VALUES 
 	                        ( $1 , $2 , $3 , $4 , $5 , $6 , $7 , $8 , $9);`
 
@@ -58,10 +60,10 @@ router.post('/' , rejectUnauthenticated , ( req , res)=>{
                     dataToSend.location, 
                     dataToSend.species, 
                     dataToSend.equipment, 
+                    dataToSend.restrictions,
                     dataToSend.bagged, 
                     dataToSend.notes,
                     dataToSend.image,
-                    dataToSend.restrictions,
                     userId
                 ]
     pool.query(sqlQuery, sqlValues)

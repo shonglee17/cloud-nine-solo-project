@@ -11,7 +11,7 @@ function UpcomingHuntItem({data}){
     const history = useHistory()
 
     const upcomingHuntDetails = () =>{
-      history.push('/upcominghuntdetails')
+      history.push(`/upcominghuntdetails/${data.id}`)
     }
     return(
         <tbody key={data.id}>
