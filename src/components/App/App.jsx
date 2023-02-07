@@ -29,7 +29,7 @@ import PreviousHunt from '../PreviousHunt/PreviousHunt';
 import PreviousHuntDetails from '../PreviousHunt/PreviousHuntDetails';
 import UpcomingHuntDetails from '../UpcomingHunt/UpcomingHuntDetails';
 import CreateHunt from '../CreateHunt/CreateHunt';
-import Head from '../Head/Head';
+
 // import './App.css';
 
 function App() {
