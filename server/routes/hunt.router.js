@@ -44,6 +44,7 @@ router.get('/previous' , rejectUnauthenticated, ( req , res ) => {
     })
 })
 
+//this route stores data from the front end user and sends it to the database
 router.post('/' , rejectUnauthenticated , ( req , res)=>{
     let dataToSend = req.body
     let userId = req.user.id
