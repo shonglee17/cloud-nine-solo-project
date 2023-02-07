@@ -24,6 +24,7 @@ function UpcomingHunt() {
           <th>DATE</th>
           <th>SPECIES</th>
           <th>MODIFY</th>
+          <th>Upcoming Hunt</th>
         </tr>
       </thead>
 
