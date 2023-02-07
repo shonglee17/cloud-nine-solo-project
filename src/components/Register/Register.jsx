@@ -8,11 +8,14 @@ function Register(){
         history.push('/')
     }
 
+    const homePage = () => {
+        history.push('/home')
+    }
 
     return(<>
             <button>Username</button>
             <button>Password</button>
-            <button>Create Account</button>
+            <button onClick={homePage}>Create Account</button>
             <button onClick={goBack}>Back</button>
             </>
     )

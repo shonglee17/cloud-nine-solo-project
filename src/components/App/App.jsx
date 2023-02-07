@@ -8,7 +8,7 @@ import {
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import Nav from '../Nav/Nav';
+// import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -27,6 +27,9 @@ import Register from '../Register/Register';
 import UpcomingHunt from '../UpcomingHunt/UpcomingHunt';
 import PreviousHunt from '../PreviousHunt/PreviousHunt';
 import PreviousHuntDetails from '../PreviousHunt/PreviousHuntDetails';
+import UpcomingHuntDetails from '../UpcomingHunt/UpcomingHuntDetails';
+import CreateHunt from '../CreateHunt/CreateHunt';
+import Head from '../Head/Head';
 // import './App.css';
 
 function App() {
@@ -41,7 +44,8 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+      
+        {/* <Nav /> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/landpage" />
@@ -55,13 +59,18 @@ function App() {
           <Route exact path ="/register">
             <Register/>
           </Route>
-
+          
           <Route exact path ="/home">
             <HomePage/>
           </Route>
 
           <Route exact path ="/upcoming">
+            
             <UpcomingHunt/>
+          </Route>
+
+          <Route exact path ="/upcominghuntdetails">
+            <UpcomingHuntDetails/>
           </Route>
 
           <Route exact path ="/previous">
@@ -71,6 +80,12 @@ function App() {
           <Route exact path ="/previoushuntdetails">
             <PreviousHuntDetails/>
           </Route>
+
+          <Route exact path ="/createhunt">
+            <CreateHunt/>
+          </Route>
+
+
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
