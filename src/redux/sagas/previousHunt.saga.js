@@ -2,32 +2,32 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 
-function* fetchUpcomingList() {
+function* fetchPreviousList() {
     try {
         // GET THE FRUIT FROM THE SERVER!
         const response = yield axios({
             method: 'GET',
-            url: '/hunt/upcoming'
+            url: '/hunt/previous'
         })
   
         // WOOT. HERE'S THE FRUIT:
-        const upcomingHuntList = response.data
-        console.log(upcomingHuntList);
+        const previousHuntList = response.data
+        console.log(previousHuntList);
         // WOO! NOW, PUT THAT FRUIT IN THE
         // basketReducer:
         yield put({
-            type: 'SET_UPCOMING',
-            payload: upcomingHuntList
+            type: 'SET_PREVIOUS',
+            payload: previousHuntList
         })
     } catch (error) {
         console.log('UpcomingSaga error:', error)
     }
   }
 
-  function* upcomingSaga() {
-    yield takeLatest('SAGA/FETCH_UPCOMING', fetchUpcomingList);
+  function* previousSaga() {
+    yield takeLatest('SAGA/FETCH_PREVIOUS', fetchPreviousList);
   }
   
   
 
-  export default upcomingSaga
+  export default previousSaga

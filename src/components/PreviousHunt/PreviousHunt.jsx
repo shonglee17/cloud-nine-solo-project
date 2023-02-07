@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import React from 'react';
-import UpcomingHuntItem from './UpcomingHuntItem';
+import PreviousHuntItem from './PreviousHuntItem';
 
-function UpcomingHunt() {
-  const upcomingHunt = useSelector((store) => store.upcomingHuntReducer);
-  console.log(upcomingHunt);
+function PreviousHunt() {
+  const previousHunt = useSelector((store) => store.previousHuntReducer);
+  console.log(previousHunt);
   useEffect(() => {
     dispatch({
-      type: 'SAGA/FETCH_UPCOMING',
+      type: 'SAGA/FETCH_PREVIOUS',
     });
   }, []);
   const dispatch = useDispatch();
-
+  console.log(previousHunt);
   return (
     <table
       style={{
@@ -27,14 +27,14 @@ function UpcomingHunt() {
         </tr>
       </thead>
 
-      {upcomingHunt.map((data) => {
-        
+      {previousHunt.map((data) => {
+
         return (
-            <UpcomingHuntItem key={data.id} data={data}/>
+        <PreviousHuntItem key={data.id} data={data}/>
         );
       })}
     </table>
   );
 }
 
-export default UpcomingHunt;
+export default PreviousHunt;
