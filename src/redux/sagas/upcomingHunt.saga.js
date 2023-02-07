@@ -11,7 +11,7 @@ function* fetchUpcomingList() {
         })
   
         // WOOT. HERE'S THE FRUIT:
-        const upcomingHuntList = response.data
+        let upcomingHuntList = response.data
         console.log(upcomingHuntList);
         // WOO! NOW, PUT THAT FRUIT IN THE
         // basketReducer:

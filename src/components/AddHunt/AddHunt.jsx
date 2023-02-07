@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 
 
-function CreateHunt(){
+function AddHunt(){
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [species, setSpecies] = useState('');
@@ -18,7 +18,10 @@ function CreateHunt(){
             location : location,
             species : species,
             equipment : equipment,
-            restrictions : restrictions
+            restrictions : restrictions,
+            bagged : 0,
+            notes : '',
+            image : ''
         }
         dispatch({
             type: 'SAGA/ADD_HUNT',
@@ -65,4 +68,4 @@ function CreateHunt(){
     )
 }
 
-export default CreateHunt
+export default AddHunt
