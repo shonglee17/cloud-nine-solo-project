@@ -27,6 +27,11 @@ function AddHunt(){
             type: 'SAGA/ADD_HUNT',
             payload: huntInfo
           });
+          setDate('')
+          setLocation('')
+          setSpecies('')
+          setEquipment('')
+          setRestrictions('')
     }
 
     return (
@@ -35,7 +40,7 @@ function AddHunt(){
                 <input
                 type="text"
                 value={date}
-                placeholder = "Date"
+                placeholder = "YYYY-MM-DD"
                 onChange={(event) => setDate(event.target.value)}
                 />
                 <input

@@ -77,5 +77,15 @@ router.post('/' , rejectUnauthenticated , ( req , res)=>{
 
 })
 
+router.delete('/:id', rejectUnauthenticated , ( req, res )=> {
+    let huntToDelete = req.params.id
+    let sqlValues = [huntToDelete]
+    
+    let sqlQuery = `DELETE FROM "hunt"
+	                    WHERE "id" = $1;`
+    
+
+})
+
 
 module.exports = router

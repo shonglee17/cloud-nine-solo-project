@@ -12,15 +12,14 @@ function PreviousHuntItem({data}){
     const history = useHistory()
 
     const previousHuntDetails = () =>{
-      history.push('/previoushuntdetails')
+      history.push(`/previoushuntdetails/${data.id}`)
     }
 
     return(
         <tbody key={data.id}>
-        <tr onClick={previousHuntDetails}>
-          <td>{newDate}</td>
-          <td>{data.species}</td>
-          <td>icons go here</td>
+        <tr>
+          <td onClick={previousHuntDetails}>{newDate}</td>
+          <td onClick={previousHuntDetails}>{data.species}</td>
         </tr>
       </tbody>
     )
