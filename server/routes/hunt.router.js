@@ -77,14 +77,18 @@ router.post('/' , rejectUnauthenticated , ( req , res)=>{
 
 })
 
-router.delete('/:id', rejectUnauthenticated , ( req, res )=> {
+router.delete('/:id', ( req, res )=> {
     let huntToDelete = req.params.id
     let sqlValues = [huntToDelete]
-    
     let sqlQuery = `DELETE FROM "hunt"
 	                    WHERE "id" = $1;`
-    
-
+    pool.query(sqlQuery, sqlValues)
+    .then((result)=>{
+        res.sendStatus(200)
+    }).catch((error)=>{
+        console.log('error in DELETE serverside', error);
+        res.sendStatus(500)
+    })
 })
 
 
