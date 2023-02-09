@@ -69,7 +69,7 @@ import './App.css';
 //             <UpcomingHunt/>
 //           </Route>
 
-//           <Route exact path ="/upcominghuntdetails">
+//           <Route exact path ="/upcominghuntdetails/:id">
 //             <UpcomingHuntDetails/>
 //           </Route>
 
@@ -77,7 +77,7 @@ import './App.css';
 //             <PreviousHunt/>
 //           </Route>
 
-//           <Route exact path ="/previoushuntdetails">
+//           <Route exact path ="/previoushuntdetails/:id">
 //             <PreviousHuntDetails/>
 //           </Route>
 
@@ -139,19 +139,12 @@ function App() {
             <HomePage />
           </ProtectedRoute>
 
-          <ProtectedRoute>
-            <Route exact path ="/createhunt">
-              <AddHunt/>
-            </Route>
-          </ProtectedRoute>
-
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
           >
-            <UpcomingHunt/>
-            {/* <InfoPage /> */}
+            <InfoPage />
           </ProtectedRoute>
 
           <Route
@@ -195,6 +188,28 @@ function App() {
               <LandingPage />
             }
           </Route>
+              <Route exact path ="/createhunt">
+              <AddHunt/>
+           </Route>
+
+           <Route exact path ="/upcoming">
+            <UpcomingHunt/>
+          </Route>
+
+          <Route exact path ="/upcominghuntdetails/:id">
+            <UpcomingHuntDetails/>
+          </Route>
+
+          <Route exact path ="/previous">
+            <PreviousHunt/>
+          </Route>
+
+          <Route exact path ="/previoushuntdetails/:id">
+            <PreviousHuntDetails/>
+          </Route>
+
+
+
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
