@@ -109,5 +109,43 @@ router.delete('/:id', rejectUnauthenticated , ( req, res )=> {
     })
 })
 
+router.put('/:id', (req, res) => {
+    // Update this single student
+    const data = req.body
+    const idToUpdate = req.params.id;
+    const sqlText = `
+    UPDATE "hunt"
+        SET "date" = $1, 
+            "location" = $2 , 
+            "species" = $3, 
+            "equipment" = $4, 
+            "bagged" = $5, 
+            "notes" = $6, 
+            "image" = $7, 
+            "restrictions" = $8 
+		        WHERE "id" = $9;
+
+    `;
+    const sqlValues = [
+        data.date,
+        data.location,
+        data.species,
+        data.equipment,
+        data.bagged,
+        data.notes,
+        data.image,
+        data.restrictions,
+        idToUpdate
+    ];
+    pool.query(sqlText, sqlValues)
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500);
+        });
+});
+
 
 module.exports = router

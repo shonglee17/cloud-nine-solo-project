@@ -27,6 +27,10 @@ function upcomingHuntDetails(){
         history.push('/upcoming')
     }
 
+    const editHunt = () => {
+        history.push(`/edit/${detail.id}`);
+    }
+
     return(
         <>
         <div>date</div>
@@ -39,7 +43,7 @@ function upcomingHuntDetails(){
         <button>ENTER</button>
         <button>CLEAR</button>
         <div>
-        <button>EDIT</button>
+        <button onClick={editHunt}>EDIT</button>
         <button onClick={deleteHunt}>DELETE</button>
         </div>
         </>
