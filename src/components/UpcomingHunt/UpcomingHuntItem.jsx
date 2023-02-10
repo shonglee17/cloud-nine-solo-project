@@ -18,7 +18,7 @@ function UpcomingHuntItem({data}){
         <tr onClick={upcomingHuntDetails}>
           <td>{newDate}</td>
           <td>{data.species}</td>
-          <td>icons go here</td>
+
         </tr>
       </tbody>
     )

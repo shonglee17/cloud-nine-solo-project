@@ -6,6 +6,24 @@ const {
     rejectUnauthenticated,
   } = require('../modules/authentication-middleware');
 
+  //this route fetches the hunt relating to the ID sent over from the client side
+  router.get('/details/:id',rejectUnauthenticated,(req, res) => {
+    const huntDetailId = req.params.id
+    let sqlQuery = `
+    SELECT * FROM "hunt"
+    WHERE "id" = $1;
+    `
+    let sqlValues = [huntDetailId]
+    pool.query(sqlQuery, sqlValues)
+      .then((dbRes) =>{
+        res.send(dbRes.rows)
+      })
+      .catch((dbErr) =>{
+        console.log('/hunt/:id GET ERROR:', dbErr)
+        res.sendStatus(500)
+      })
+  });
+
   //this route fetches upcoming hunts from the database for the logged in user
 router.get('/upcoming' , rejectUnauthenticated, ( req , res ) => {
     
@@ -80,11 +98,15 @@ router.post('/' , rejectUnauthenticated , ( req , res)=>{
 router.delete('/:id', rejectUnauthenticated , ( req, res )=> {
     let huntToDelete = req.params.id
     let sqlValues = [huntToDelete]
-    
     let sqlQuery = `DELETE FROM "hunt"
 	                    WHERE "id" = $1;`
-    
-
+    pool.query(sqlQuery, sqlValues)
+    .then((result)=>{
+        res.sendStatus(200)
+    }).catch((error)=>{
+        console.log('error in DELETE serverside', error);
+        res.sendStatus(500)
+    })
 })
 
 

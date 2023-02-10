@@ -20,7 +20,7 @@ function* fetchPreviousList() {
             payload: previousHuntList
         })
     } catch (error) {
-        console.log('UpcomingSaga error:', error)
+        console.log('previousSaga error:', error)
     }
   }
 

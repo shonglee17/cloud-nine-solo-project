@@ -13,11 +13,6 @@ function UpcomingHunt() {
     });
   }, []);
   const dispatch = useDispatch();
-  const history = useHistory()
-  
-  const upcomingHuntDetails = () =>{
-    history.push('/upcominghuntdetails')
-  }
 
   return (
     <table
@@ -26,11 +21,10 @@ function UpcomingHunt() {
       }}
     >
       <thead>
-        <tr onClick={upcomingHuntDetails}>
+        <tr>
           <th>DATE</th>
           <th>SPECIES</th>
-          <th>MODIFY</th>
-          <th>Upcoming Hunt</th>
+
         </tr>
       </thead>
 

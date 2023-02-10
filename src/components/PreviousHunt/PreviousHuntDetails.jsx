@@ -1,4 +1,32 @@
+import {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {useParams, useHistory} from 'react-router-dom'
+
+
+
 function PreviousHuntDetails(){
+    const params = useParams();
+    const history = useHistory();
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch({
+            type: 'SAGA/FETCH_HUNTDETAILS',
+            payload: params.id
+        })
+    }, [params.id])
+
+
+
+    const detail = useSelector((store) => store.huntDetailReducer)
+    const deleteHunt = () =>{
+        console.log(detail);
+        dispatch({
+            type: 'SAGA/DELETE_HUNT',
+            payload: detail.id
+        })
+        history.push('/previous')
+    }
+
     return(
         <>
         <div>date</div>
@@ -10,7 +38,10 @@ function PreviousHuntDetails(){
         <div>Note Text Box</div>
         <button>ENTER</button>
         <button>CLEAR</button>
-        <div>icons go here</div>
+        <div>
+        <button>EDIT</button>
+        <button onClick={deleteHunt}>DELETE</button>
+        </div>
         </>
     )
 }
