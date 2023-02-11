@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import React from 'react';
 import UpcomingHuntItem from './UpcomingHuntItem';
-import {useHistory} from 'react-router-dom'
+import UpcomingHuntDetails from './UpcomingHuntDetails';
 
 function UpcomingHunt() {
+  
   const upcomingHunt = useSelector((store) => store.upcomingHuntReducer);
   console.log(upcomingHunt);
   useEffect(() => {
@@ -19,9 +20,10 @@ function UpcomingHunt() {
       style={{
         backgroundColor: '#D6EEEE',
       }}
+      
     >
-      <thead>
-        <tr>
+      <thead >
+        <tr >
           <th>DATE</th>
           <th>SPECIES</th>
 
@@ -31,7 +33,9 @@ function UpcomingHunt() {
       {upcomingHunt.map((data) => {
         
         return (
+          
             <UpcomingHuntItem key={data.id} data={data}/>
+          
         );
       })}
     </table>

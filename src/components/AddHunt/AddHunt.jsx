@@ -38,7 +38,7 @@ function AddHunt(){
         <>
             <form onSubmit={addHunt}>
                 <input
-                type="text"
+                type="date"
                 value={date}
                 placeholder = "YYYY-MM-DD"
                 onChange={(event) => setDate(event.target.value)}

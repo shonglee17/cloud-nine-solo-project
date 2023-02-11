@@ -5,8 +5,28 @@ const router = require('./user.router');
 const {
     rejectUnauthenticated,
   } = require('../modules/authentication-middleware');
+  
+  //this route fetches the details for one hunt using the id
+  router.get('/edit/:id',rejectUnauthenticated,(req, res) => {
+    const huntDetailId = req.params.id
+    console.log(huntDetailId);
+    let sqlQuery = `
+    SELECT * FROM "hunt"
+    WHERE "id" = $1;
+    `
+    let sqlValues = [huntDetailId]
+    pool.query(sqlQuery, sqlValues)
+      .then((dbRes) =>{
+        console.log(dbRes.rows[0]);
+        res.send(dbRes.rows[0])
+      })
+      .catch((dbErr) =>{
+        console.log('/hunt/:id GET ERROR:', dbErr)
+        res.sendStatus(500)
+      })
+  });
 
-  //this route fetches the hunt relating to the ID sent over from the client side
+  //this route fetches the hunt(s) relating to the user ID sent over from the client side
   router.get('/details/:id',rejectUnauthenticated,(req, res) => {
     const huntDetailId = req.params.id
     let sqlQuery = `
@@ -32,7 +52,8 @@ router.get('/upcoming' , rejectUnauthenticated, ( req , res ) => {
   
     const sqlQuery = `SELECT * FROM "hunt"
 	                    WHERE "hunt"."user_id" = $1
-		                    AND "hunt"."date" > now(); `
+		                    AND "hunt"."date" > now()
+                            ORDER BY "hunt"."id" ASC; `
     pool.query(sqlQuery, sqlValues)
     .then ((dbRes)=>{
         res.send(dbRes.rows)
@@ -51,7 +72,8 @@ router.get('/previous' , rejectUnauthenticated, ( req , res ) => {
 
     const sqlQuery = `SELECT * FROM "hunt"
 	                    WHERE "hunt"."user_id" = $1
-		                    AND "hunt"."date" < now(); `
+		                    AND "hunt"."date" < now()
+                            ORDER BY "hunt"."id" ASC; `
     pool.query(sqlQuery, sqlValues)
     .then ((dbRes)=>{
         res.send(dbRes.rows)
@@ -95,6 +117,7 @@ router.post('/' , rejectUnauthenticated , ( req , res)=>{
 
 })
 
+//delete this single hunt
 router.delete('/:id', rejectUnauthenticated , ( req, res )=> {
     let huntToDelete = req.params.id
     let sqlValues = [huntToDelete]
@@ -109,10 +132,11 @@ router.delete('/:id', rejectUnauthenticated , ( req, res )=> {
     })
 })
 
-router.put('/:id', (req, res) => {
-    // Update this single student
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+    // Update this single hunt
     const data = req.body
-    const idToUpdate = req.params.id;
+    console.log('req.body =' , data)
+    
     const sqlText = `
     UPDATE "hunt"
         SET "date" = $1, 
@@ -123,7 +147,7 @@ router.put('/:id', (req, res) => {
             "notes" = $6, 
             "image" = $7, 
             "restrictions" = $8 
-		        WHERE "id" = $9;
+		WHERE "id" = $9;
 
     `;
     const sqlValues = [
@@ -135,7 +159,7 @@ router.put('/:id', (req, res) => {
         data.notes,
         data.image,
         data.restrictions,
-        idToUpdate
+        data.id
     ];
     pool.query(sqlText, sqlValues)
         .then((result) => {

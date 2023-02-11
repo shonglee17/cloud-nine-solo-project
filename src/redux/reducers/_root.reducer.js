@@ -4,6 +4,7 @@ import user from './user.reducer';
 import upcomingHuntReducer from './upcomingHunt.reducer';
 import previousHuntReducer from './previousHunt.reducer';
 import huntDetailReducer from './details.reducer';
+import huntToEditReducer from './huntToEdit.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   upcomingHuntReducer,
   previousHuntReducer, //stores the list of Upcoming hunt from the database
   huntDetailReducer,
+  huntToEditReducer,
 });
 
 export default rootReducer;

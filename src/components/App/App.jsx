@@ -29,7 +29,8 @@ import UpcomingHuntDetails from '../UpcomingHunt/UpcomingHuntDetails';
 import PreviousHunt from '../PreviousHunt/PreviousHunt';
 import PreviousHuntDetails from '../PreviousHunt/PreviousHuntDetails';
 import AddHunt from '../AddHunt/AddHunt';
-import EditHunt from '../EditHunt/EditHunt';
+import EditUpcomingHunt from '../EditHunt/EditUpcomingHunt';
+import EditPreviousHunt from '../EditHunt/EditPreviousHunt';
 
 import './App.css';
 
@@ -209,8 +210,12 @@ function App() {
             <PreviousHuntDetails/>
           </Route>
 
-          <Route exact path ="/edit/:id">
-            <EditHunt/>
+          <Route exact path ="/edit/upcoming/:id">
+            <EditUpcomingHunt/>
+          </Route>
+
+          <Route exact path ="/edit/previous/:id">
+            <EditPreviousHunt/>
           </Route>
 
 
