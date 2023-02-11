@@ -7,6 +7,9 @@ import previousSaga from './previousHunt.saga';
 import addHuntSaga from './addHunt.saga';
 import detailsSaga from './details.saga';
 import deleteSaga from './deleteHunt.saga';
+import huntToEdit from './huntToEdit.saga';
+import updateUpcomingHunt from './updateUpcomingHunt.saga';
+import updatePreviousHunt from './updatePreviousHunt.saga';
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -23,6 +26,9 @@ export default function* rootSaga() {
     previousSaga(),
     addHuntSaga(),
     detailsSaga(),
-    deleteSaga()
+    deleteSaga(),
+    huntToEdit(),
+    updateUpcomingHunt(),
+    updatePreviousHunt()
   ]);
 }

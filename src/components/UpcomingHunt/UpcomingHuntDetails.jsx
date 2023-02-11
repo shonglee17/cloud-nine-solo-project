@@ -4,7 +4,7 @@ import {useParams, useHistory} from 'react-router-dom'
 
 
 
-function upcomingHuntDetails(){
+function UpcomingHuntDetails(){
     const params = useParams();
     const history = useHistory();
     const dispatch = useDispatch();
@@ -15,9 +15,17 @@ function upcomingHuntDetails(){
         })
     }, [params.id])
 
-
+    
 
     const detail = useSelector((store) => store.huntDetailReducer)
+
+    let huntDate = detail.date;
+    let dateObj = new Date(huntDate);
+    let month = dateObj.getUTCMonth() + 1; //months from 1-12
+    let day = dateObj.getUTCDate();
+    let year = dateObj.getUTCFullYear();
+    let newDate = year + '/' + month + '/' + day;
+
     const deleteHunt = () =>{
         console.log(detail);
         dispatch({
@@ -27,23 +35,38 @@ function upcomingHuntDetails(){
         history.push('/upcoming')
     }
 
+    const editHunt = () => {
+        
+        history.push(`/edit/upcoming/${detail.id}`);
+    }
+
+    const upcomingHuntsList = () => {
+        
+        history.push(`/upcoming`);
+    }
+
     return(
+        
         <>
-        <div>date</div>
-        <div>location</div>
-        <div>species</div>
-        <div>equipment</div>
-        <div>bagged</div>
-        <div>Notes</div>
-        <div>Note Text Box</div>
-        <button>ENTER</button>
-        <button>CLEAR</button>
-        <div>
-        <button>EDIT</button>
-        <button onClick={deleteHunt}>DELETE</button>
-        </div>
+           <div key={detail.id}>DATE : {newDate}</div>
+           <div>LOCATION : {detail.location}</div>
+           <div>SPECIES : {detail.species}</div>
+           <div>EQUIPMENT : {detail.equipment}</div>
+           <div>RESTRICTIONS : {detail.restrictions}</div>
+           <div>BAGGED : {detail.bagged}</div>
+           <div>NOTES : {detail.notes}</div>
+            <div>
+                <button onClick={editHunt}>EDIT</button>
+                <button onClick={deleteHunt}>DELETE</button>
+                <button onClick={upcomingHuntsList}>Back</button>
+                
+            </div>
         </>
+
+
+       
+        
     )
 }
 
-export default upcomingHuntDetails
+export default UpcomingHuntDetails

@@ -29,6 +29,8 @@ import UpcomingHuntDetails from '../UpcomingHunt/UpcomingHuntDetails';
 import PreviousHunt from '../PreviousHunt/PreviousHunt';
 import PreviousHuntDetails from '../PreviousHunt/PreviousHuntDetails';
 import AddHunt from '../AddHunt/AddHunt';
+import EditUpcomingHunt from '../EditHunt/EditUpcomingHunt';
+import EditPreviousHunt from '../EditHunt/EditPreviousHunt';
 
 import './App.css';
 
@@ -208,7 +210,13 @@ function App() {
             <PreviousHuntDetails/>
           </Route>
 
+          <Route exact path ="/edit/upcoming/:id">
+            <EditUpcomingHunt/>
+          </Route>
 
+          <Route exact path ="/edit/previous/:id">
+            <EditPreviousHunt/>
+          </Route>
 
 
           {/* If none of the other routes matched, we will show a 404. */}

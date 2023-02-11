@@ -1,4 +1,5 @@
 import {useHistory} from 'react-router-dom'
+import UpcomingHuntDetails from './UpcomingHuntDetails';
 
 function UpcomingHuntItem({data}){
     let huntDate = data.date;
@@ -13,14 +14,19 @@ function UpcomingHuntItem({data}){
     const upcomingHuntDetails = () =>{
       history.push(`/upcominghuntdetails/${data.id}`)
     }
+    
+    console.log(data);
+    
     return(
+      <>
         <tbody key={data.id}>
         <tr onClick={upcomingHuntDetails}>
           <td>{newDate}</td>
           <td>{data.species}</td>
-
         </tr>
       </tbody>
+        
+      </>
     )
 }
 
