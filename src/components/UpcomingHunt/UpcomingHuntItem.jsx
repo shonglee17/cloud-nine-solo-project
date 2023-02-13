@@ -25,7 +25,7 @@ function UpcomingHuntItem({data}){
           <td>{data.species}</td>
         </tr>
       </tbody>
-        
+    
       </>
     )
 }

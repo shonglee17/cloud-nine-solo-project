@@ -1,6 +1,6 @@
 import { useHistory} from 'react-router-dom'
-import Head from '../Head/Head'
-import Foot from '../Foot/Foot'
+import NavHead from '../NavHead/NavHead'
+import Footer from '../Footer/Footer'
 
 
 function HomePage(){
@@ -19,11 +19,12 @@ function HomePage(){
 
     return (
         <>
-        <div><Head/></div>
+        <NavHead/>
+        
         <button onClick={createHunt}>Create A Hunt</button>
         <button onClick={upcomingHunt}>Upcoming Hunt</button>
         <button onClick={previousHunt}>Previous Hunt</button>
-        <div><Foot/></div>
+        <Footer/>
         </>
     )
 }

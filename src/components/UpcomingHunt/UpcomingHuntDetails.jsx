@@ -1,7 +1,8 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useParams, useHistory} from 'react-router-dom'
-
+import NavHead from '../NavHead/NavHead';
+import Footer from '../Footer/Footer';
 
 
 function UpcomingHuntDetails(){
@@ -48,6 +49,7 @@ function UpcomingHuntDetails(){
     return(
         
         <>
+        <NavHead/>
            <div key={detail.id}>DATE : {newDate}</div>
            <div>LOCATION : {detail.location}</div>
            <div>SPECIES : {detail.species}</div>
@@ -61,6 +63,7 @@ function UpcomingHuntDetails(){
                 <button onClick={upcomingHuntsList}>Back</button>
                 
             </div>
+            <Footer/>
         </>
 
 

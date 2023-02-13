@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { useHistory} from 'react-router-dom'
-
+import NavHead from '../NavHead/NavHead';
+import Footer from '../Footer/Footer';
 function AddHunt(){
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
@@ -39,6 +40,7 @@ function AddHunt(){
 
     return (
         <>
+        <NavHead/>
             <form onSubmit={addHunt}>
                 <input
                 type="date"
@@ -72,6 +74,7 @@ function AddHunt(){
                 />
             </form>
             <button onClick={addHunt}>Check Mark</button>
+            <Footer/>
         </>
     )
 }

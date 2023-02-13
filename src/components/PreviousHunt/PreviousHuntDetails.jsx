@@ -1,7 +1,8 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useParams, useHistory} from 'react-router-dom'
-
+import NavHead from '../NavHead/NavHead';
+import Footer from '../Footer/Footer';
 
 
 function PreviousHuntDetails(){
@@ -40,14 +41,12 @@ function PreviousHuntDetails(){
         history.push(`/edit/previous/${detail.id}`);
     }
 
-    const previousHuntsList = () => {
-        
-        history.push(`/previous`);
-    }
+
 
     return(
         
         <>
+        <NavHead/>
            <div key={detail.id}>DATE : {newDate}</div>
            <div>LOCATION : {detail.location}</div>
            <div>SPECIES : {detail.species}</div>
@@ -58,9 +57,9 @@ function PreviousHuntDetails(){
             <div>
                 <button onClick={editHunt}>EDIT</button>
                 <button onClick={deleteHunt}>DELETE</button>
-                <button onClick={previousHuntsList}>Back</button>
                 
             </div>
+            <Footer/>
         </>
 
 

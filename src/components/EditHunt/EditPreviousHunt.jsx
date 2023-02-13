@@ -1,7 +1,8 @@
 import { useParams, useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import NavHead from '../NavHead/NavHead';
+import Footer from '../Footer/Footer';
 function EditPreviousHunt() {
   const params = useParams();
   const dispatch = useDispatch();
@@ -87,10 +88,11 @@ function EditPreviousHunt() {
 
   return (
     <div>
+      <NavHead/>
       <h2>The Id Of This Hunt is : {params.id} !!!!!</h2>
       <form>
       <input
-          type="text"
+          type="date"
           value={huntToEdit.date || ''}
           onChange={handleDateChange} 
         />
@@ -133,7 +135,7 @@ function EditPreviousHunt() {
         />
          <button onClick={handleSubmit}>Submit</button>
       </form>
-     
+     <Footer/>
     </div>
   );
 }
