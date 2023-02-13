@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
-
+import { useHistory} from 'react-router-dom'
 
 function AddHunt(){
     const [date, setDate] = useState('');
@@ -8,6 +8,7 @@ function AddHunt(){
     const [species, setSpecies] = useState('');
     const [equipment, setEquipment] = useState('');
     const [restrictions, setRestrictions] = useState('');
+    const history = useHistory()
     const dispatch = useDispatch()
 
     const addHunt = (event) => {
@@ -32,6 +33,8 @@ function AddHunt(){
           setSpecies('')
           setEquipment('')
           setRestrictions('')
+          
+          history.push('/upcoming')
     }
 
     return (

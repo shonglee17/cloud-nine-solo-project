@@ -91,44 +91,44 @@ function EditUpcomingHunt() {
       <form>
       <input
           type="text"
-          value={huntToEdit.date}
+          value={huntToEdit.date || ''}
           onChange={handleDateChange} 
         />
         <input
           type="text"
           // This next line is saying, "Use the studentToEdit.github_name
           // value if it exists OR use an empty string."
-          value={huntToEdit.location}
+          value={huntToEdit.location || ''}
           onChange={handleLocationChange} 
         />
         <input
           type="text"
-          value={huntToEdit.species}
+          value={huntToEdit.species || ''}
           onChange={handleSpeciesChange} 
         />
         <input
           type="text"
-          value={huntToEdit.equipment}
+          value={huntToEdit.equipment || ''}
           onChange={handleEquipmentChange} 
         />
         <input
           type="text"
-          value={huntToEdit.bagged}
+          value={huntToEdit.bagged || ''}
           onChange={handleBaggedChange} 
         />
         <input
           type="text"
-          value={huntToEdit.notes}
+          value={huntToEdit.notes || ''}
           onChange={handleNotesChange} 
         />
         <input
           type="text"
-          value={huntToEdit.image}
+          value={huntToEdit.image || ''}
           onChange={handleImageChange} 
         />
         <input
           type="text"
-          value={huntToEdit.restrictions}
+          value={huntToEdit.restrictions || ''}
           onChange={handleRestrictionsChange} 
         />
          <button onClick={handleSubmit}>Submit</button>
@@ -140,10 +140,5 @@ function EditUpcomingHunt() {
 
 export default EditUpcomingHunt;
 
-/////////////////////////////////////
-/////////////////////////////////////
-/////////////////////////////////////
-/////////////////////////////////////
-/////////////////////////////////////
 
 
