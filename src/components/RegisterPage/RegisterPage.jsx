@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Nav from '../Nav/Nav';
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
@@ -7,6 +7,8 @@ function RegisterPage() {
   const history = useHistory();
 
   return (
+    <>
+    <Nav/>
     <div>
       <RegisterForm />
 
@@ -22,6 +24,7 @@ function RegisterPage() {
         </button>
       </center>
     </div>
+    </>
   );
 }
 
