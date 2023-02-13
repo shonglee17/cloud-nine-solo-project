@@ -25,11 +25,11 @@ function Footer() {
   }
 
   return (
-    <>
-    <div onClick = {handleGoBack}>Back Button</div>
-    <div onClick={homeButton}>Home Button</div>
-    <div onClick={logout}>Logout</div>
-    </>
+    <div className="footerIcons">
+    <div className="back-icon" onClick = {handleGoBack}></div>
+    <div className="home-icon" onClick={homeButton}></div>
+    <div className="logout-icon" onClick={logout}></div>
+    </div>
   )
 }
 
