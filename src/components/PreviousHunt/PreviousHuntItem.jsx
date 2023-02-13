@@ -1,5 +1,6 @@
 import {useHistory} from 'react-router-dom'
-
+import NavHead from '../NavHead/NavHead';
+import Footer from '../Footer/Footer';
 function PreviousHuntItem({data}){
     let huntDate = data.date;
     let dateObj = new Date(huntDate);
@@ -16,12 +17,14 @@ function PreviousHuntItem({data}){
     }
 
     return(
+      <>
         <tbody key={data.id}>
         <tr>
           <td onClick={previousHuntDetails}>{newDate}</td>
           <td onClick={previousHuntDetails}>{data.species}</td>
         </tr>
       </tbody>
+      </>
     )
 }
 

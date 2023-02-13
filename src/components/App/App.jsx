@@ -34,73 +34,6 @@ import EditPreviousHunt from '../EditHunt/EditPreviousHunt';
 
 import './App.css';
 
-// function App() {
-//   const dispatch = useDispatch();
-
-//   const user = useSelector(store => store.user);
-
-//   useEffect(() => {
-//     dispatch({ type: 'FETCH_USER' });
-//   }, [dispatch]);
-
-//   return (
-//     <Router>
-//       <div>
-      
-//         {/* <Nav /> */}
-//         <Switch>
-//           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-//           <Redirect exact from="/" to="/landpage" />
-
-//           {/* Visiting localhost:3000/about will show the about page. */}
-
-//           <Route exact path ="/landpage">
-//             <LandPage/>
-//           </Route>
-
-//           <Route exact path ="/register">
-//             <Register/>
-//           </Route>
-          
-//           <Route exact path ="/home">
-//             <HomePage/>
-//           </Route>
-
-//           <Route exact path ="/upcoming">
-            
-//             <UpcomingHunt/>
-//           </Route>
-
-//           <Route exact path ="/upcominghuntdetails/:id">
-//             <UpcomingHuntDetails/>
-//           </Route>
-
-//           <Route exact path ="/previous">
-//             <PreviousHunt/>
-//           </Route>
-
-//           <Route exact path ="/previoushuntdetails/:id">
-//             <PreviousHuntDetails/>
-//           </Route>
-
-//           <Route exact path ="/createhunt">
-//             <AddHunt/>
-//           </Route>
-
-
-
-//           {/* If none of the other routes matched, we will show a 404. */}
-//           <Route>
-//             <h1>404</h1>
-//           </Route>
-//         </Switch>
-//         {/* <Footer /> */}
-//       </div>
-//     </Router>
-//   );
-// }
-
-export default App;
 
 // pasting base layout of components for reference
 function App() {
@@ -113,20 +46,25 @@ function App() {
   }, [dispatch]);
 
   return (
+    
     <Router>
+      
       <div>
-        <Nav />
+        
+      {/* <Nav /> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route
+          
             // shows AboutPage at all times (logged in or not)
             exact
             path="/about"
           >
             <AboutPage />
+            
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
@@ -224,8 +162,9 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
 }
+export default App;
