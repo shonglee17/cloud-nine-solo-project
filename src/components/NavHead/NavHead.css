@@ -1,15 +1,23 @@
-.navIcons{
+.navIcons {
+    width: 100%;
     background-color: black;
     color: white;
-    background-color: black;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+
+
+.crosshair{
+    width: 30%;
+    right: 35%
 }
 
-@media only screen and (max-width: 600px) {
-    .navIcons {
-      padding: 5px;
-    }
-  }
+.marker{
+    width: 15%;
+    height: 10%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-40%, 40%);
+}

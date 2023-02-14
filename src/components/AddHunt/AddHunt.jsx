@@ -40,7 +40,9 @@ function AddHunt(){
 
     return (
         <>
+        
         <NavHead/>
+        
             <form onSubmit={addHunt}>
                 <input
                 type="date"
