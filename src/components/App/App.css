@@ -11,8 +11,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
-  
+  width: 375px;
+  height: 500px;
 }
 
 img {
