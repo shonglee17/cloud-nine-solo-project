@@ -4,17 +4,16 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* fetchPreviousList() {
     try {
-        // GET THE FRUIT FROM THE SERVER!
+        
         const response = yield axios({
             method: 'GET',
             url: '/hunt/previous'
         })
   
-        // WOOT. HERE'S THE FRUIT:
+       
         const previousHuntList = response.data
         console.log(previousHuntList);
-        // WOO! NOW, PUT THAT FRUIT IN THE
-        // basketReducer:
+        
         yield put({
             type: 'SET_PREVIOUS',
             payload: previousHuntList

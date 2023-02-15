@@ -9,16 +9,10 @@ function* updateHuntDetails(action) {
     yield axios({
       method: 'PUT',
       url: `/hunt/${editedHunt}`,
-      data: editedHunt // 👈 will look something like:
-              // {
-              //   id: 3,
-              //   github_name: 'matthew-dangerzone-black'
-              // }
+      data: editedHunt 
+            
     })
-    // We've successfully updated a row in the students
-    // table! Now we need to run our fetchStudents Saga
-    // function to bring the studentList reducer back
-    // in sync with our students table:
+  
     yield put({
       type: 'SAGA/FETCH_UPCOMING'
     })

@@ -34,37 +34,31 @@ import EditPreviousHunt from '../EditHunt/EditPreviousHunt';
 
 import './App.css';
 
-
 // pasting base layout of components for reference
 function App() {
   const dispatch = useDispatch();
 
-  const user = useSelector(store => store.user);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
 
   return (
-    
     <Router>
-      
       <div>
-        
-      {/* <Nav /> */}
+        {/* <Nav /> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route
-          
             // shows AboutPage at all times (logged in or not)
             exact
             path="/about"
           >
             <AboutPage />
-            
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
@@ -87,75 +81,65 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
-          <Route
-            exact
-            path="/login"
-          >
-            {user.id ?
-              // If the user is already logged in, 
+          <Route exact path="/login">
+            {user.id ? (
+              // If the user is already logged in,
               // redirect to the /user page
               <Redirect to="/user" />
-              :
+            ) : (
               // Otherwise, show the login page
               <LoginPage />
-            }
+            )}
           </Route>
 
-          <Route
-            exact
-            path="/registration"
-          >
-            {user.id ?
-              // If the user is already logged in, 
+          <Route exact path="/registration">
+            {user.id ? (
+              // If the user is already logged in,
               // redirect them to the /user page
               <Redirect to="/user" />
-              :
+            ) : (
               // Otherwise, show the registration page
               <RegisterPage />
-            }
+            )}
           </Route>
 
-          <Route
-            exact
-            path="/home"
-          >
-            {user.id ?
-              // If the user is already logged in, 
+          <Route exact path="/home">
+            {user.id ? (
+              // If the user is already logged in,
               // redirect them to the /user page
               <Redirect to="/user" />
-              :
+            ) : (
               // Otherwise, show the Landing page
               <LandingPage />
-            }
+            )}
           </Route>
-              <Route exact path ="/createhunt">
-              <AddHunt/>
-           </Route>
-
-           <Route exact path ="/upcoming">
-            <UpcomingHunt/>
+          <Route exact path="/createhunt">
+            <AddHunt />
           </Route>
 
-          <Route exact path ="/upcominghuntdetails/:id">
-            <UpcomingHuntDetails/>
+          <Route exact path="/upcoming">
+            <UpcomingHunt />
           </Route>
 
-          <Route exact path ="/previous">
-            <PreviousHunt/>
+          <Route exact path="/upcominghuntdetails/:id">
+            <UpcomingHuntDetails />
           </Route>
 
-          <Route exact path ="/previoushuntdetails/:id">
-            <PreviousHuntDetails/>
+          <Route exact path="/previous">
+            <PreviousHunt />
           </Route>
 
-          <Route exact path ="/edit/upcoming/:id">
-            <EditUpcomingHunt/>
+          <Route exact path="/previoushuntdetails/:id">
+            <PreviousHuntDetails />
           </Route>
 
-          <Route exact path ="/edit/previous/:id">
-            <EditPreviousHunt/>
+          <Route exact path="/edit/upcoming/:id">
+            <EditUpcomingHunt />
           </Route>
 
+          <Route exact path="/edit/previous/:id">
+            <EditPreviousHunt />
+          </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

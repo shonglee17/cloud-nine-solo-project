@@ -16,8 +16,8 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   upcomingHuntReducer,
   previousHuntReducer, //stores the list of Upcoming hunt from the database
-  huntDetailReducer,
-  huntToEditReducer,
+  huntDetailReducer,//stores the details of the hunt selected
+  huntToEditReducer,//stores the data of the changes the user makes on the dom
 });
 
 export default rootReducer;
