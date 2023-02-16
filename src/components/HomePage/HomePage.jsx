@@ -1,6 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
+import Button from 'react-bootstrap/Button';
+import './HomePage.css' 
 
 function HomePage() {
   const history = useHistory();
@@ -19,10 +21,11 @@ function HomePage() {
   return (
     <>
       <NavHead />
-
-      <button onClick={createHunt}>Create A Hunt</button>
-      <button onClick={upcomingHunt}>Upcoming Hunt</button>
-      <button onClick={previousHunt}>Previous Hunt</button>
+      <div className="button-group">
+      <Button variant="info" className="button green" onClick={createHunt}>Create Hunt</Button>
+      <Button variant="info" className="button green" onClick={upcomingHunt}>Upcoming Hunt</Button>
+      <Button variant="info" className="button green" onClick={previousHunt}>Previous Hunt</Button>
+      </div>
       <Footer />
     </>
   );

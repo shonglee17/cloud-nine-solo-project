@@ -3,9 +3,9 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useParams, useHistory} from 'react-router-dom'
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
+import './PreviousHuntDetails.css';
 
-
-function UpcomingHuntDetails(){
+function PreviousHuntDetails(){
     const params = useParams();
     const history = useHistory();
     const dispatch = useDispatch();
@@ -33,37 +33,36 @@ function UpcomingHuntDetails(){
             type: 'SAGA/DELETE_HUNT',
             payload: detail.id
         })
-        history.push('/upcoming')
+        history.push('/previous')
     }
 
     const editHunt = () => {
         
-        history.push(`/edit/upcoming/${detail.id}`);
+        history.push(`/edit/previous/${detail.id}`);
     }
 
-    const upcomingHuntsList = () => {
-        
-        history.push(`/upcoming`);
-    }
+
 
     return(
         
         <>
-        <NavHead/>
-           <div key={detail.id}>DATE : {newDate}</div>
-           <div>LOCATION : {detail.location}</div>
-           <div>SPECIES : {detail.species}</div>
-           <div>EQUIPMENT : {detail.equipment}</div>
-           <div>RESTRICTIONS : {detail.restrictions}</div>
-           <div>BAGGED : {detail.bagged}</div>
-           <div>NOTES : {detail.notes}</div>
-            <div>
-                <button onClick={editHunt}>EDIT</button>
-                <button onClick={deleteHunt}>DELETE</button>
-                <button onClick={upcomingHuntsList}>Back</button>
-                
-            </div>
-            <Footer/>
+         
+      <NavHead />
+      <div className="details">
+      <div key={detail.id}>DATE : {newDate}</div>
+      <div>LOCATION : {detail.location}</div>
+      <div>SPECIES : {detail.species}</div>
+      <div>EQUIPMENT : {detail.equipment}</div>
+      <div>RESTRICTIONS : {detail.restrictions}</div>
+      <div>BAGGED : {detail.bagged}</div>
+      <div>NOTES : {detail.notes}</div>
+      <div>
+        <button onClick={editHunt}>EDIT</button>
+        <button onClick={deleteHunt}>DELETE</button>
+      </div>
+      </div>
+      <Footer />
+    
         </>
 
 
@@ -72,4 +71,4 @@ function UpcomingHuntDetails(){
     )
 }
 
-export default UpcomingHuntDetails
+export default PreviousHuntDetails

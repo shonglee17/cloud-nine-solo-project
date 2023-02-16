@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
+import './EditUpcomingHunt.css' 
+
 function EditUpcomingHunt() {
   const params = useParams();
   const dispatch = useDispatch();
@@ -85,17 +87,20 @@ function EditUpcomingHunt() {
     });
     history.push(`/upcominghuntdetails/${params.id}`);
   };
-
+  
   return (
     <div>
       <NavHead/>
-      <h2>The Id Of This Hunt is : {params.id} !!!!!</h2>
+     
       <form>
+      <button onClick={handleSubmit}>Submit</button>
+      <h6 style={{ color: 'orange' }}>Date</h6>
       <input
           type="date"
           value={huntToEdit.date || ''}
           onChange={handleDateChange} 
         />
+        <h6 style={{ color: 'orange' }}>Location</h6>
         <input
           type="text"
           // This next line is saying, "Use the studentToEdit.github_name
@@ -103,37 +108,43 @@ function EditUpcomingHunt() {
           value={huntToEdit.location || ''}
           onChange={handleLocationChange} 
         />
+        <h6 style={{ color: 'orange' }}>Species</h6>
         <input
           type="text"
           value={huntToEdit.species || ''}
           onChange={handleSpeciesChange} 
         />
+        <h6 style={{ color: 'orange' }}>Equipment</h6>
         <input
           type="text"
           value={huntToEdit.equipment || ''}
           onChange={handleEquipmentChange} 
         />
+        <h6 style={{ color: 'orange' }}>Bagged</h6>
         <input
           type="text"
           value={huntToEdit.bagged || ''}
           onChange={handleBaggedChange} 
         />
+        <h6 style={{ color: 'orange' }}>Notes</h6>
         <input
           type="text"
           value={huntToEdit.notes || ''}
           onChange={handleNotesChange} 
         />
+        <h6 style={{ color: 'orange' }}>Image</h6>
         <input
           type="text"
           value={huntToEdit.image || ''}
           onChange={handleImageChange} 
         />
+        <h6>Restrictions</h6>
         <input
           type="text"
           value={huntToEdit.restrictions || ''}
           onChange={handleRestrictionsChange} 
         />
-         <button onClick={handleSubmit}>Submit</button>
+         
       </form>
      <Footer/>
     </div>

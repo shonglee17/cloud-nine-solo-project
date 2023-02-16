@@ -25,12 +25,12 @@ import LandPage from '../LandPage/LandPage';
 import HomePage from '../HomePage/HomePage';
 import Register from '../Register/Register';
 import UpcomingHunt from '../UpcomingHunt/UpcomingHunt';
-import UpcomingHuntDetails from '../UpcomingHunt/UpcomingHuntDetails';
+import UpcomingHuntDetails from '../UpcomingHuntDetails/UpcomingHuntDetails';
 import PreviousHunt from '../PreviousHunt/PreviousHunt';
-import PreviousHuntDetails from '../PreviousHunt/PreviousHuntDetails';
+import PreviousHuntDetails from '../PreviousHuntDetail/PreviousHuntDetails';
 import AddHunt from '../AddHunt/AddHunt';
-import EditUpcomingHunt from '../EditHunt/EditUpcomingHunt';
-import EditPreviousHunt from '../EditHunt/EditPreviousHunt';
+import EditPreviousHunt from '../EditPreviousHunt/EditPreviousHunt';
+import EditUpcomingHunt from '../EditUpcomingHunt/EditUpcomingHunt';
 
 import './App.css';
 

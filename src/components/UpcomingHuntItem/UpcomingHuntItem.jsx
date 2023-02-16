@@ -1,5 +1,5 @@
 import {useHistory} from 'react-router-dom'
-import UpcomingHuntDetails from './UpcomingHuntDetails';
+
 
 function UpcomingHuntItem({data}){
     let huntDate = data.date;

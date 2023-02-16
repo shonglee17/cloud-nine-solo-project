@@ -1,4 +1,7 @@
 import './NavHead.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function NavHead() {
     const style = {color: "orange"}
