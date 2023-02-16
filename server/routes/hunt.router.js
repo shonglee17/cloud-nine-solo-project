@@ -53,7 +53,7 @@ router.get('/upcoming' , rejectUnauthenticated, ( req , res ) => {
     const sqlQuery = `SELECT * FROM "hunt"
 	                    WHERE "hunt"."user_id" = $1
 		                    AND "hunt"."date" > now()
-                            ORDER BY "hunt"."id" ASC; `
+                            ORDER BY "date" ASC; `
     pool.query(sqlQuery, sqlValues)
     .then ((dbRes)=>{
         res.send(dbRes.rows)
@@ -73,7 +73,7 @@ router.get('/previous' , rejectUnauthenticated, ( req , res ) => {
     const sqlQuery = `SELECT * FROM "hunt"
 	                    WHERE "hunt"."user_id" = $1
 		                    AND "hunt"."date" < now()
-                            ORDER BY "hunt"."id" ASC; `
+                            ORDER BY "date" DESC; `
     pool.query(sqlQuery, sqlValues)
     .then ((dbRes)=>{
         res.send(dbRes.rows)

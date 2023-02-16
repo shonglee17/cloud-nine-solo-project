@@ -21,7 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 //Building components
-import Used from '../Used/Used';
+import Used from '../Used.jsx/Used';
 import HomePage from '../HomePage/HomePage';
 import Register from '../Register/Register';
 import UpcomingHunt from '../UpcomingHunt/UpcomingHunt';
