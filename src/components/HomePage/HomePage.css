@@ -1,24 +1,37 @@
-.createButton{
-    height : 100px;
-    width : 200px;
-}
-
-
-
-  
 
   .button-group {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 80px;
-    
+    margin: 50px;
+    font-size: 16px; /* Set the font size to 16 pixels */
   }
 
   .button-green {
     background-color: #4CAF50; /* Replace with your desired shade of green */
     color: #fff; /* Set the text color to white or another contrasting color */
   }
+
+
+  .create{
+    margin: 30px;
+    width: 300px;
+    height: 80px;
+  }
+
+
+  .upcoming{
+    margin: 30px;
+    width: 300px;
+    height: 80px;
+  }
+
+  .previous{
+    margin: 30px;
+    width: 300px;
+    height: 80px;
+  }
+
 
   

@@ -5,6 +5,8 @@ import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
 import './EditUpcomingHunt.css' 
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 
 function EditUpcomingHunt() {
   const params = useParams();
@@ -94,9 +96,66 @@ function EditUpcomingHunt() {
       <NavHead/>
      
       <form>
-      <button onClick={handleSubmit}>Submit</button>
-      <Form.Control type="text" placeholder="Location" value={huntToEdit.location || ''} onChange={handleLocationChange}  />
-      <h6 style={{ color: 'orange' }}>Date</h6>
+      
+      <Form.Control 
+      type="date" 
+      placeholder="Date" 
+      value={huntToEdit.date || ''} 
+      onChange={handleDateChange}
+      style={{ width: '50%' }}  
+      />
+      <Form.Control 
+      type="text" 
+      placeholder="Location" 
+      value={huntToEdit.location || ''} 
+      onChange={handleLocationChange}
+      style={{ width: '50%' }}  
+      />
+      <Form.Control 
+      type="text" 
+      placeholder="Species" 
+      value={huntToEdit.species || ''} 
+      onChange={handleSpeciesChange}
+      style={{ width: '50%' }}  
+      />
+      <Form.Control 
+      type="text" 
+      placeholder="Equipment" 
+      value={huntToEdit.equipment || ''} 
+      onChange={handleEquipmentChange}
+      style={{ width: '50%' }}  
+      />
+      <Form.Control 
+      type="text" 
+      placeholder="Bagged" 
+      value={huntToEdit.bagged || ''} 
+      onChange={handleBaggedChange}
+      style={{ width: '50%' }}  
+      />
+      <Form.Control 
+      type="text" 
+      placeholder="Notes" 
+      value={huntToEdit.notes || ''} 
+      onChange={handleNotesChange}
+      style={{ width: '50%' }}  
+      />
+      <Form.Control 
+      type="text" 
+      placeholder="image" 
+      value={huntToEdit.image || ''} 
+      onChange={handleImageChange}
+      style={{ width: '50%' }}  
+      />
+      <Form.Control 
+      type="text" 
+      placeholder="Restrictions" 
+      value={huntToEdit.restrictions || ''} 
+      onChange={handleRestrictionsChange}
+      style={{ width: '50%' }}  
+      />
+      <Button variant="success" onClick={handleSubmit} style={{ backgroundColor: 'orange' }}>SUBMIT</Button>{' '}
+      {/* <button onClick={handleSubmit}>Submit</button> */}
+      {/* <h6 style={{ color: 'orange' }}>Date</h6>
       <input
           type="date"
           value={huntToEdit.date || ''}
@@ -145,7 +204,7 @@ function EditUpcomingHunt() {
           type="text"
           value={huntToEdit.restrictions || ''}
           onChange={handleRestrictionsChange} 
-        />
+        /> */}
          
       </form>
      <Footer/>

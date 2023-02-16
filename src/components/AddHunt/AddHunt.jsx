@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { useHistory} from 'react-router-dom'
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 function AddHunt(){
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
@@ -44,38 +47,50 @@ function AddHunt(){
         <NavHead/>
         
             <form onSubmit={addHunt}>
-                <input
-                type="date"
-                value={date}
-                placeholder = "YYYY-MM-DD"
-                onChange={(event) => setDate(event.target.value)}
-                />
-                <input
-                type="text"
-                value={location}
-                placeholder = "Location"
-                onChange={(event) => setLocation(event.target.value)}
-                />
-                <input
-                type="text"
-                value={species}
-                placeholder = "Species"
-                onChange={(event) => setSpecies(event.target.value)}
-                />
-                <input
-                type="text"
-                value={equipment}
-                placeholder = "Equipment"
-                onChange={(event) => setEquipment(event.target.value)}
-                />
-                <input
-                type="text"
-                value={restrictions}
-                placeholder = "Restrictions"
-                onChange={(event) => setRestrictions(event.target.value)}
-                />
+            
+            <Form.Control 
+            size="lg" 
+            type="Date" 
+            placeholder="Location" 
+            value={date}
+            onChange={(event) => setDate(event.target.value)}
+            style={{ width: '80%' }} 
+            />
+            <Form.Control 
+            size="lg" 
+            type="text" 
+            placeholder="Location" 
+            value={location}
+            onChange={(event) => setLocation(event.target.value)}
+            style={{ width: '80%' }} 
+            />
+            <Form.Control 
+            size="lg" 
+            type="text" 
+            placeholder="Species" 
+            value={species}
+            onChange={(event) => setSpecies(event.target.value)}
+            style={{ width: '80%' }} 
+            />
+            <Form.Control 
+            size="lg" 
+            type="text" 
+            placeholder="Equipment" 
+            value={equipment}
+            onChange={(event) => setEquipment(event.target.value)}
+            style={{ width: '80%' }} 
+            />
+            <Form.Control 
+            size="lg" 
+            type="text" 
+            placeholder="Restrictions" 
+            value={restrictions}
+            onChange={(event) => setRestrictions(event.target.value)}
+            style={{ width: '80%' }} 
+            />
+           
             </form>
-            <button onClick={addHunt}>Check Mark</button>
+            <Button variant="outline-success" onClick={addHunt} style={{ backgroundColor: 'blue' }}>CREATE</Button>{' '}
             <Footer/>
         </>
     )
