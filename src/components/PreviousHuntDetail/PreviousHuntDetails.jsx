@@ -61,7 +61,7 @@ function PreviousHuntDetails(){
       <ListGroup.Item variant="light">NOTES : {detail.notes}</ListGroup.Item>
     </ListGroup>
     <Button variant="success" onClick={editHunt} style={{ backgroundColor: 'green' }}>EDIT</Button>{' '}
-    <Button variant="danger" onClick={deleteHunt} style={{ backgroundColor: 'orange' }}>DELETE</Button>{' '}
+    <Button variant="danger" onClick={deleteHunt} style={{ backgroundColor: 'red' }}>DELETE</Button>{' '}
       <Footer />
     
         </>

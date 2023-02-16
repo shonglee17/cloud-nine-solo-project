@@ -22,9 +22,9 @@ function HomePage() {
     <>
       <NavHead />
       <div className="button-group">
-      <Button className="create" variant="info" style={{ backgroundColor: 'green' }} onClick={createHunt}>CREATE HUNT</Button>
-      <Button className="upcoming" variant="info" style={{ backgroundColor: 'green' }} onClick={upcomingHunt}>UPCOMING HUNT</Button>
-      <Button className="previous" variant="info" style={{ backgroundColor: 'green' }} onClick={previousHunt}>PREVIOUS HUNT</Button>
+      <Button className="create" variant="info" style={{ backgroundColor: 'orange' , color: 'black'  }} onClick={createHunt}>CREATE HUNT</Button>
+      <Button className="upcoming" variant="info" style={{ backgroundColor: 'orange' , color: 'black' }} onClick={upcomingHunt}>UPCOMING HUNT</Button>
+      <Button className="previous" variant="info" style={{ backgroundColor: 'orange' , color: 'black' }} onClick={previousHunt}>PREVIOUS HUNT</Button>
       </div>
       <Footer />
     </>

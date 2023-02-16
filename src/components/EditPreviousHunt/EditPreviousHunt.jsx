@@ -151,7 +151,7 @@ function EditPreviousHunt() {
       onChange={handleRestrictionsChange}
       style={{ width: '50%' }}  
       />
-      <Button variant="success" onClick={handleSubmit} style={{ backgroundColor: 'orange' }}>SUBMIT</Button>{' '}
+      <Button variant="success" onClick={handleSubmit} style={{ backgroundColor: 'green' }}>SUBMIT</Button>{' '}
          
       </form>
      <Footer/>

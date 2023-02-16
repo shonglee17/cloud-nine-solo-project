@@ -153,7 +153,7 @@ function EditUpcomingHunt() {
       onChange={handleRestrictionsChange}
       style={{ width: '50%' }}  
       />
-      <Button variant="success" onClick={handleSubmit} style={{ backgroundColor: 'orange' }}>SUBMIT</Button>{' '}
+      <Button variant="success" onClick={handleSubmit} style={{ backgroundColor: 'green' }}>SUBMIT</Button>{' '}
       {/* <button onClick={handleSubmit}>Submit</button> */}
       {/* <h6 style={{ color: 'orange' }}>Date</h6>
       <input
