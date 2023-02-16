@@ -5,6 +5,7 @@ import PreviousHuntItem from '../PreviousHuntItem/PreviousHuntItem';
 import { useHistory } from 'react-router-dom';
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
+import Table from 'react-bootstrap/Table';
 import './PreviousHunt.css'
 
 function PreviousHunt() {
@@ -25,11 +26,7 @@ function PreviousHunt() {
   return (
     <>
     <NavHead/>
-    <table
-      style={{
-        backgroundColor: '#D6EEEE',
-      }}
-    >
+    <Table striped bordered hover variant="dark">
       <thead>
         <tr>
           <th>DATE</th>
@@ -44,7 +41,7 @@ function PreviousHunt() {
         <PreviousHuntItem key={data.id} data={data}/>
         );
       })}
-    </table>
+    </Table>
     <Footer/>
     </>
   );

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
 import './EditUpcomingHunt.css' 
+import Form from 'react-bootstrap/Form';
 
 function EditUpcomingHunt() {
   const params = useParams();
@@ -94,6 +95,7 @@ function EditUpcomingHunt() {
      
       <form>
       <button onClick={handleSubmit}>Submit</button>
+      <Form.Control type="text" placeholder="Location" value={huntToEdit.location || ''} onChange={handleLocationChange}  />
       <h6 style={{ color: 'orange' }}>Date</h6>
       <input
           type="date"

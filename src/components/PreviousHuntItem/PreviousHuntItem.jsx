@@ -7,7 +7,7 @@ function PreviousHuntItem({data}){
     let month = dateObj.getUTCMonth() + 1; //months from 1-12
     let day = dateObj.getUTCDate();
     let year = dateObj.getUTCFullYear();
-    let newDate = year + '/' + month + '/' + day;
+    let newDate = month + '/' + day + '/' + year;
     console.log(data.species);
 
     const history = useHistory()

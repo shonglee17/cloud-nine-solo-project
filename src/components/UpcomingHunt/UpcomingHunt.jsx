@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
 import './UpcomingHunt.css'
+import Table from 'react-bootstrap/Table';
+
 function UpcomingHunt() {
   
   const upcomingHunt = useSelector((store) => store.upcomingHuntReducer);
@@ -24,12 +26,7 @@ function UpcomingHunt() {
   return (
     <>
     <NavHead/>
-    <table
-      style={{
-        backgroundColor: '#D6EEEE',
-      }}
-      
-    >
+    <Table striped bordered hover variant="dark">
       <thead >
         <tr >
           <th>DATE</th>
@@ -46,7 +43,7 @@ function UpcomingHunt() {
           
         );
       })}
-    </table>
+    </Table>
 
     <Footer/>
     </>

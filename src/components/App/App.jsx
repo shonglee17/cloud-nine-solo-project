@@ -21,7 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 //Building components
-import LandPage from '../LandPage/LandPage';
+import Used from '../Used/Used';
 import HomePage from '../HomePage/HomePage';
 import Register from '../Register/Register';
 import UpcomingHunt from '../UpcomingHunt/UpcomingHunt';
@@ -139,6 +139,10 @@ function App() {
 
           <Route exact path="/edit/previous/:id">
             <EditPreviousHunt />
+          </Route>
+
+          <Route exact path="/used">
+            <Used />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

@@ -4,6 +4,8 @@ import { useParams, useHistory } from 'react-router-dom';
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
 import './UpcomingHuntDetails.css';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
 
 function UpcomingHuntDetails() {
   const params = useParams();
@@ -23,7 +25,7 @@ function UpcomingHuntDetails() {
   let month = dateObj.getUTCMonth() + 1; //months from 1-12
   let day = dateObj.getUTCDate();
   let year = dateObj.getUTCFullYear();
-  let newDate = year + '/' + month + '/' + day;
+  let newDate = month + '/' + day + '/' + year;
 
   const deleteHunt = () => {
     console.log(detail);
@@ -42,7 +44,19 @@ function UpcomingHuntDetails() {
   return (
     <>
       <NavHead />
-      <div className="details">
+      <ListGroup>
+      
+      <ListGroup.Item variant="light">DATE : {newDate}</ListGroup.Item>
+      <ListGroup.Item variant="dark">LOCATION : {detail.location}</ListGroup.Item>
+      <ListGroup.Item variant="light">SPECIES : {detail.species}</ListGroup.Item>
+      <ListGroup.Item variant="dark">EQUIPMENT : {detail.equipment}</ListGroup.Item>
+      <ListGroup.Item variant="light">RESTRICTIONS : {detail.restrictions}</ListGroup.Item>
+      <ListGroup.Item variant="dark">BAGGED : {detail.bagged}</ListGroup.Item>
+      <ListGroup.Item variant="light">NOTES : {detail.notes}</ListGroup.Item>
+    </ListGroup>
+    <Button variant="success" onClick={editHunt} style={{ backgroundColor: 'green' }}>EDIT</Button>{' '}
+    <Button variant="danger" onClick={deleteHunt} style={{ backgroundColor: 'orange' }}>DELETE</Button>{' '}
+      {/* <div className="details">
       <div key={detail.id}>DATE : {newDate}</div>
       <div>LOCATION : {detail.location}</div>
       <div>SPECIES : {detail.species}</div>
@@ -54,7 +68,7 @@ function UpcomingHuntDetails() {
         <button onClick={editHunt}>EDIT</button>
         <button onClick={deleteHunt}>DELETE</button>
       </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );
