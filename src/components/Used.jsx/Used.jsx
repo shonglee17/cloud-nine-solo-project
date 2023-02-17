@@ -27,7 +27,7 @@ function Used(){
         <br></br>
         <h1>Thank You !</h1>
         
-        <button type="button" class="btn btn-home" onClick={homeButton} >Home</button>
+        <button className="usedButton" onClick={homeButton}>Home</button>
         </div>
     )
 }

@@ -13,10 +13,11 @@
       margin: 30px auto; /* Set the left and right margin to "auto" to center the element horizontally */
   }
 
-  
-
-  .btn-home {
-    background-color: orange;
-    display: block;
-    margin: 50px auto 0;
+  .usedButton{
+    height: 100px;
+    width: 200px;
+    background-color: black;
+    border-color: black;
   }
+
+ 
