@@ -41,6 +41,16 @@ function AddHunt(){
           history.push('/upcoming')
     }
 
+    const auto = () => {
+        setDate(2023-5-5)
+        setLocation('North Dakota')
+        setSpecies('Ducks')
+        setEquipment('12 ga.')
+        setRestrictions('4 drakes 2 hens')
+}
+
+    
+
     return (
         <>
         
@@ -90,7 +100,8 @@ function AddHunt(){
             />
            
             </form>
-            <Button variant="outline-success" onClick={addHunt} style={{ backgroundColor: 'blue' }}>CREATE</Button>{' '}
+            <Button variant="outline-success" onClick={addHunt} style={{ backgroundColor: 'orange' }}>CREATE</Button>{' '}
+            <div onClick={auto}><h1>'</h1></div>
             <Footer/>
         </>
     )

@@ -6,21 +6,28 @@ import './Used.css'
 
 function Used(){
     const history = useHistory()
-    const donezo = () => {
+    const homeButton = () => {
         history.push('/')
     }
 
     return(
         <div className = "used">
-        <h1>*These are the tools and libraries I used (write out the components no need to read them out loud)</h1>
+        <h1>Tools Used</h1>
+        <h5>- React</h5>
+        <h5>- node.js</h5>
+        <h5>- express</h5>
+        <h5>- mdbootstrap</h5>
+        <h5>- Postgres SQL</h5>
+        <h5>- Git</h5>
+        <h5>- Redux / Saga</h5>
+        <h5>- Postman</h5>
         <br></br>
-        <h1>*Thank the MVP'z</h1>
         <br></br>
-        <h1>*Plug the Linked In</h1>
-        <h5>www.linkedin.com/shonglee17</h5>
+        <h4>www.linkedin.com/shonglee17</h4>
         <br></br>
-        <h1>*Introduce the next presenter</h1>
-        <button onClick={donezo}>Skdattle</button>
+        <h1>Thank You !</h1>
+        
+        <button type="button" class="btn btn-home" onClick={homeButton} >Home</button>
         </div>
     )
 }

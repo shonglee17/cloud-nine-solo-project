@@ -11,6 +11,7 @@ function Footer() {
 
   const history = useHistory();
   const dispatch = useDispatch()
+  
   const handleGoBack = () => {
     history.goBack();
   };

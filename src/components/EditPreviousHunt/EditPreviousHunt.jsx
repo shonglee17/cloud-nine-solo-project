@@ -139,7 +139,7 @@ function EditPreviousHunt() {
       />
       <Form.Control 
       type="text" 
-      placeholder="image" 
+      placeholder="Image" 
       value={huntToEdit.image || ''} 
       onChange={handleImageChange}
       style={{ width: '50%' }}  

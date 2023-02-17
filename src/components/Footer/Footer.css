@@ -34,7 +34,7 @@ footer {
   font-weight: 900;
   font-size: 40px;
   position: absolute;
-    left: 40%;
+    left: 44%;
     right: 0;
     margin: auto;
     top: 50%;
@@ -48,7 +48,7 @@ footer {
   font-weight: 900;
   font-size: 40px;
   position: absolute;
-    right: 35px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     

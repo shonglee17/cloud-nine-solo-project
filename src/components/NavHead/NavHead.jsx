@@ -11,7 +11,15 @@ function NavHead() {
 
   const about = () => {
     history.push('/used')
+
   };
+  const auto = () => {
+          setDate(2023-5-5)
+          setLocation('North Dakota')
+          setSpecies('Ducks')
+          setEquipment('12 ga.')
+          setRestrictions('4 drakes 2 hens')
+  }
   return (
     <div className="navIcons">
       <div className="personIcon" onClick={about}>

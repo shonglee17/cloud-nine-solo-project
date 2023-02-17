@@ -28,7 +28,6 @@ function UpcomingHuntDetails() {
   let newDate = month + '/' + day + '/' + year;
 
   const deleteHunt = () => {
-    console.log(detail);
     dispatch({
       type: 'SAGA/DELETE_HUNT',
       payload: detail.id,
@@ -40,35 +39,40 @@ function UpcomingHuntDetails() {
     history.push(`/edit/upcoming/${detail.id}`);
   };
 
-
   return (
     <>
       <NavHead />
       <ListGroup>
-      
-      <ListGroup.Item variant="light">DATE : {newDate}</ListGroup.Item>
-      <ListGroup.Item variant="dark">LOCATION : {detail.location}</ListGroup.Item>
-      <ListGroup.Item variant="light">SPECIES : {detail.species}</ListGroup.Item>
-      <ListGroup.Item variant="dark">EQUIPMENT : {detail.equipment}</ListGroup.Item>
-      <ListGroup.Item variant="light">RESTRICTIONS : {detail.restrictions}</ListGroup.Item>
-      <ListGroup.Item variant="dark">BAGGED : {detail.bagged}</ListGroup.Item>
-      <ListGroup.Item variant="light">NOTES : {detail.notes}</ListGroup.Item>
-    </ListGroup>
-    <Button variant="success" onClick={editHunt} style={{ backgroundColor: 'green' }}>EDIT</Button>{' '}
-    <Button variant="danger" onClick={deleteHunt} style={{ backgroundColor: 'red' }}>DELETE</Button>{' '}
-      {/* <div className="details">
-      <div key={detail.id}>DATE : {newDate}</div>
-      <div>LOCATION : {detail.location}</div>
-      <div>SPECIES : {detail.species}</div>
-      <div>EQUIPMENT : {detail.equipment}</div>
-      <div>RESTRICTIONS : {detail.restrictions}</div>
-      <div>BAGGED : {detail.bagged}</div>
-      <div>NOTES : {detail.notes}</div>
-      <div>
-        <button onClick={editHunt}>EDIT</button>
-        <button onClick={deleteHunt}>DELETE</button>
-      </div>
-      </div> */}
+        <ListGroup.Item variant="light">DATE : {newDate}</ListGroup.Item>
+        <ListGroup.Item variant="dark">
+          LOCATION : {detail.location}
+        </ListGroup.Item>
+        <ListGroup.Item variant="light">
+          SPECIES : {detail.species}
+        </ListGroup.Item>
+        <ListGroup.Item variant="dark">
+          EQUIPMENT : {detail.equipment}
+        </ListGroup.Item>
+        <ListGroup.Item variant="light">
+          RESTRICTIONS : {detail.restrictions}
+        </ListGroup.Item>
+        <ListGroup.Item variant="dark">BAGGED : {detail.bagged}</ListGroup.Item>
+        <ListGroup.Item variant="light">NOTES : {detail.notes}</ListGroup.Item>
+      </ListGroup>
+      <Button
+        variant="success"
+        onClick={editHunt}
+        style={{ backgroundColor: 'green' }}
+      >
+        EDIT
+      </Button>{' '}
+      <Button
+        variant="danger"
+        onClick={deleteHunt}
+        style={{ backgroundColor: 'red' }}
+      >
+        DELETE
+      </Button>{' '}
       <Footer />
     </>
   );
