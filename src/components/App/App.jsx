@@ -21,7 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 //Building components
-import Used from '../Used.jsx/Used';
+import Used from '../Used/Used';
 import HomePage from '../HomePage/HomePage';
 import Register from '../Register/Register';
 import UpcomingHunt from '../UpcomingHunt/UpcomingHunt';
@@ -31,6 +31,7 @@ import PreviousHuntDetails from '../PreviousHuntDetail/PreviousHuntDetails';
 import AddHunt from '../AddHunt/AddHunt';
 import EditPreviousHunt from '../EditPreviousHunt/EditPreviousHunt';
 import EditUpcomingHunt from '../EditUpcomingHunt/EditUpcomingHunt';
+import Maps from '../Maps/Maps';
 
 import './App.css';
 
@@ -144,6 +145,11 @@ function App() {
           <Route exact path="/used">
             <Used />
           </Route>
+
+          <Route exact path="/maps">
+            <Maps />
+          </Route>
+
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

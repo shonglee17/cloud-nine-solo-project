@@ -42,7 +42,7 @@ function AddHunt(){
     }
 
     const auto = () => {
-        setDate(2023-5-5)
+        setDate('2023-05-05')
         setLocation('North Dakota')
         setSpecies('Ducks')
         setEquipment('12 ga.')
