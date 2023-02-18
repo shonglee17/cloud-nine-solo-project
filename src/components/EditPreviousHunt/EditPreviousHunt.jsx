@@ -125,32 +125,47 @@ function EditPreviousHunt() {
       />
       <Form.Control 
       type="text" 
-      placeholder="Bagged" 
-      value={huntToEdit.bagged || ''} 
-      onChange={handleBaggedChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
-      type="text" 
-      placeholder="Notes" 
-      value={huntToEdit.notes || ''} 
-      onChange={handleNotesChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
-      type="text" 
-      placeholder="Image" 
-      value={huntToEdit.image || ''} 
-      onChange={handleImageChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
-      type="text" 
       placeholder="Restrictions" 
       value={huntToEdit.restrictions || ''} 
       onChange={handleRestrictionsChange}
       style={{ width: '50%' }}  
       />
+      <Form.Control 
+      type="text" 
+      placeholder="Bagged" 
+      value={huntToEdit.bagged || ''} 
+      onChange={handleBaggedChange}
+      style={{ width: '50%' }}  
+      />
+      <Form.Control
+          type="text"
+          placeholder="Notes"
+          value={huntToEdit.notes || ''}
+          onChange={handleNotesChange}
+          style={{
+            width: '80%',
+            height: '120px',
+            verticalAlign: 'top',
+            textAlign: 'left',
+            paddingBottom: '80px',
+            paddingLeft: '10px',
+            paddingRight: '0',
+          }}
+        />
+      {/* <Form.Control 
+      type="text" 
+      placeholder="Image" 
+      value={huntToEdit.image || ''} 
+      onChange={handleImageChange}
+      style={{ width: '50%' }}  
+      /> */}
+      {/* <Form.Control 
+      type="text" 
+      placeholder="Restrictions" 
+      value={huntToEdit.restrictions || ''} 
+      onChange={handleRestrictionsChange}
+      style={{ width: '50%' }}  
+      /> */}
       <Button variant="success" onClick={handleSubmit} style={{ backgroundColor: 'green' }}>SUBMIT</Button>{' '}
          
       </form>

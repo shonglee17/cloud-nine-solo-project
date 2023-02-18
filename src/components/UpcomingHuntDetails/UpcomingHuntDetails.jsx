@@ -56,8 +56,10 @@ function UpcomingHuntDetails() {
         <ListGroup.Item variant="light">
           RESTRICTIONS : {detail.restrictions}
         </ListGroup.Item>
-        <ListGroup.Item variant="dark">BAGGED : {detail.bagged}</ListGroup.Item>
-        <ListGroup.Item variant="light">NOTES : {detail.notes}</ListGroup.Item>
+        <ListGroup.Item variant="dark">
+          BAGGED : {detail.bagged}</ListGroup.Item>
+        <ListGroup.Item variant="light">
+          NOTES : {detail.notes}</ListGroup.Item>
       </ListGroup>
       <Button variant="success" onClick={editHunt} style={{ backgroundColor: 'green', width : '100px' }}><i className="far fa-edit"></i></Button>
     <Button variant="danger" onClick={deleteHunt} style={{ backgroundColor: 'red', float: 'right', width : '100px' }}><i className="fas fa-trash-alt"></i></Button>

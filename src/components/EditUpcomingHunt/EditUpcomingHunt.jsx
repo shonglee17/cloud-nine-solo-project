@@ -3,18 +3,15 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
-import './EditUpcomingHunt.css' 
+import './EditUpcomingHunt.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
 
 function EditUpcomingHunt() {
   const params = useParams();
   const dispatch = useDispatch();
   const huntToEdit = useSelector((store) => store.huntToEditReducer);
   const history = useHistory();
-
-
 
   useEffect(() => {
     console.log('this is params', params.id);
@@ -31,7 +28,7 @@ function EditUpcomingHunt() {
       payload: evt.target.value,
     });
   };
- 
+
   const handleLocationChange = (evt) => {
     dispatch({
       type: 'SET_LOCATION',
@@ -90,129 +87,94 @@ function EditUpcomingHunt() {
     });
     history.push(`/upcominghuntdetails/${params.id}`);
   };
-  
+
   return (
     <div>
-      <NavHead/>
-     
+      <NavHead />
+
       <form>
-      
-      <Form.Control 
-      type="date" 
-      placeholder="Date" 
-      value={huntToEdit.date || ''} 
-      onChange={handleDateChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
-      type="text" 
-      placeholder="Location" 
-      value={huntToEdit.location || ''} 
-      onChange={handleLocationChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
-      type="text" 
-      placeholder="Species" 
-      value={huntToEdit.species || ''} 
-      onChange={handleSpeciesChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
-      type="text" 
-      placeholder="Equipment" 
-      value={huntToEdit.equipment || ''} 
-      onChange={handleEquipmentChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
-      type="text" 
-      placeholder="Bagged" 
-      value={huntToEdit.bagged || ''} 
-      onChange={handleBaggedChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
-      type="text" 
-      placeholder="Notes" 
-      value={huntToEdit.notes || ''} 
-      onChange={handleNotesChange}
-      style={{ width: '50%' }}  
-      />
-      <Form.Control 
+        <Form.Control
+          type="date"
+          placeholder="Date"
+          value={huntToEdit.date || ''}
+          onChange={handleDateChange}
+          style={{ width: '50%' }}
+        />
+        <Form.Control
+          type="text"
+          placeholder="Location"
+          value={huntToEdit.location || ''}
+          onChange={handleLocationChange}
+          style={{ width: '50%' }}
+        />
+        <Form.Control
+          type="text"
+          placeholder="Species"
+          value={huntToEdit.species || ''}
+          onChange={handleSpeciesChange}
+          style={{ width: '50%' }}
+        />
+        <Form.Control
+          type="text"
+          placeholder="Equipment"
+          value={huntToEdit.equipment || ''}
+          onChange={handleEquipmentChange}
+          style={{ width: '50%' }}
+        />
+        <Form.Control
+          type="text"
+          placeholder="Restrictions"
+          value={huntToEdit.restrictions || ''}
+          onChange={handleRestrictionsChange}
+          style={{ width: '50%' }}
+        />
+        <Form.Control
+          type="text"
+          placeholder="Bagged"
+          value={huntToEdit.bagged || ''}
+          onChange={handleBaggedChange}
+          style={{ width: '50%' }}
+        />
+        <Form.Control
+          type="text"
+          placeholder="Notes"
+          value={huntToEdit.notes || ''}
+          onChange={handleNotesChange}
+          style={{
+            width: '80%',
+            height: '120px',
+            verticalAlign: 'top',
+            textAlign: 'left',
+            paddingBottom: '80px',
+            paddingLeft: '10px',
+            paddingRight: '0',
+          }}
+        />
+        {/* <Form.Control 
       type="text" 
       placeholder="Image" 
       value={huntToEdit.image || ''} 
       onChange={handleImageChange}
       style={{ width: '50%' }}  
-      />
-      <Form.Control 
+      /> */}
+        {/* <Form.Control 
       type="text" 
       placeholder="Restrictions" 
       value={huntToEdit.restrictions || ''} 
       onChange={handleRestrictionsChange}
       style={{ width: '50%' }}  
-      />
-      <Button variant="success" onClick={handleSubmit} style={{ backgroundColor: 'green' }}>SUBMIT</Button>{' '}
-      {/* <button onClick={handleSubmit}>Submit</button> */}
-      {/* <h6 style={{ color: 'orange' }}>Date</h6>
-      <input
-          type="date"
-          value={huntToEdit.date || ''}
-          onChange={handleDateChange} 
-        />
-        <h6 style={{ color: 'orange' }}>Location</h6>
-        <input
-          type="text"
-          // This next line is saying, "Use the studentToEdit.github_name
-          // value if it exists OR use an empty string."
-          value={huntToEdit.location || ''}
-          onChange={handleLocationChange} 
-        />
-        <h6 style={{ color: 'orange' }}>Species</h6>
-        <input
-          type="text"
-          value={huntToEdit.species || ''}
-          onChange={handleSpeciesChange} 
-        />
-        <h6 style={{ color: 'orange' }}>Equipment</h6>
-        <input
-          type="text"
-          value={huntToEdit.equipment || ''}
-          onChange={handleEquipmentChange} 
-        />
-        <h6 style={{ color: 'orange' }}>Bagged</h6>
-        <input
-          type="text"
-          value={huntToEdit.bagged || ''}
-          onChange={handleBaggedChange} 
-        />
-        <h6 style={{ color: 'orange' }}>Notes</h6>
-        <input
-          type="text"
-          value={huntToEdit.notes || ''}
-          onChange={handleNotesChange} 
-        />
-        <h6 style={{ color: 'orange' }}>Image</h6>
-        <input
-          type="text"
-          value={huntToEdit.image || ''}
-          onChange={handleImageChange} 
-        />
-        <h6>Restrictions</h6>
-        <input
-          type="text"
-          value={huntToEdit.restrictions || ''}
-          onChange={handleRestrictionsChange} 
-        /> */}
-         
+      /> */}
+        <Button
+          variant="success"
+          onClick={handleSubmit}
+          style={{ backgroundColor: 'green' }}
+        >
+          SUBMIT
+        </Button>{' '}
       </form>
-     <Footer/>
+      <Footer />
     </div>
   );
 }
 
 export default EditUpcomingHunt;
-
-
-
