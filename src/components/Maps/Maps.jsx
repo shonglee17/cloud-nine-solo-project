@@ -2,7 +2,7 @@ import NavHead from '../NavHead/NavHead';
 import Footer from '../Footer/Footer';
 import { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-
+import Swal from 'sweetalert2';
 
 function Maps() {
   const [center, setCenter] = useState(null);
@@ -20,15 +20,13 @@ function Maps() {
   }, []);
 
   const saveLocation = () => {
-    console.log(center);
-    const message = `Do you want to save your current location Latitude : ${center.lat} , Longitude : ${center.lng}?`;
-    if (window.confirm(message)) {
-      // User clicked OK, handle the save action here
-      alert('Success!');
-    } else {
-      // User clicked Cancel, handle the cancel action here
-      console.log('Location not saved');
-    }
+    const message = `Lat : ${center.lat} Lng : ${center.lng} `;
+    Swal.fire({
+      title: 'Current Location : ',
+      text: message,
+      icon: 'info',
+      confirmButtonText: 'Ok'
+    });
   };
 
   
