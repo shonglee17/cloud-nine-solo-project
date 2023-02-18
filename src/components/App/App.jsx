@@ -146,7 +146,7 @@ function App() {
             <Used />
           </Route>
 
-          <Route exact path="/maps">
+          <Route exact path="/maps/:id">
             <Maps />
           </Route>
 
