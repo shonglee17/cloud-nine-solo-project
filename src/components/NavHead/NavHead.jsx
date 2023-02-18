@@ -1,13 +1,15 @@
 import './NavHead.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useHistory } from 'react-router-dom';
+import { useParams} from 'react-router-dom'
 
 function NavHead() {
   const style = { color: 'orange' };
   const history = useHistory();
+  const params = useParams()
 
   const maps = () => {
-    history.push('/maps')
+    history.push(`/maps/${params.id}`)
   };
 
   const about = () => {
