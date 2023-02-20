@@ -42,11 +42,11 @@ function AddHunt() {
   };
 
   const auto = () => {
-    setDate('2023-05-05');
-    setLocation('North Dakota');
-    setSpecies('Ducks');
+    setDate('2023-10-14');
+    setLocation('Owatonna');
+    setSpecies('Pheasants');
     setEquipment('12 ga.');
-    setRestrictions('4 drakes 2 hens');
+    setRestrictions('Season starts at 9AM');
   };
 
   return (
