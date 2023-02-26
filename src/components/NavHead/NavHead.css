@@ -1,15 +1,27 @@
-.navIcons {
-  width: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  height: 50%;
-  
-}
+/* background-color: orange;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between; */
+
+    .navIcons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+    }
+    
 
 .navigation {
     position: absolute;
-    top: 2%;
+    top: 20%;
     left: 78%;
     font-size: 2em;
     /* transform: translate(-50%, -50%); */
@@ -17,12 +29,17 @@
 
 .personIcon{
     position: absolute;
-    top: 2%;
+    top: 20%;
     left: 13%;
     font-size: 2em;
 }
 
-.crosshair{
-    width: 80px;
+.crosshair {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40%;
 }
 
